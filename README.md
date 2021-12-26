@@ -1,3 +1,3 @@
 # Mult database project
 
-An sample project with muil databases connection
+An sample project with mult-databases connection
