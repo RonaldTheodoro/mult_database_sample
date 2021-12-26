@@ -32,3 +32,6 @@ class DatabaseConnectionFactory:
 
     def is_database_in_engines(self, database):
         return database in self.__engines
+
+
+connections = DatabaseConnectionFactory()
