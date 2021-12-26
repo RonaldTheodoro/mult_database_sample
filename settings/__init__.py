@@ -1,6 +1,5 @@
-from settings.settings import Settings
+from settings.settings import settings
+from settings.secrets import secrets
 
 
-settings = Settings()
-
-__all__ = ['settings']
+__all__ = ['settings', 'secrets']

@@ -37,3 +37,6 @@ class Secrets:
     @property
     def storage(self):
         return self.__storage
+
+
+secrets = Secrets()

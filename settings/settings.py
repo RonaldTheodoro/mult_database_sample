@@ -7,3 +7,6 @@ class Settings:
     @property
     def extras(self):
         return self.BASE_DIR / 'extras'
+
+
+settings = Settings()
