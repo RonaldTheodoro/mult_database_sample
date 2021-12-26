@@ -7,7 +7,7 @@ from settings.db.database_url_parse import get_database_url_from_secret
 class DatabaseConnectionFactory:
     __engines = {}
 
-    def C(self, database):
+    def create_session(self, database):
         engine = self.create_engine(database)
         Session = sessionmaker(autocommit=False, autoflush=False, bind=engine)
         return Session()
