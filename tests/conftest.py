@@ -1,7 +1,7 @@
 import pytest
 
 from settings.secrets import Secrets
-from settings.db.session import DatabaseConnectionFactory
+from settings.db.database_connection_factory import DatabaseConnectionFactory
 
 
 @pytest.fixture
