@@ -31,3 +31,17 @@ def test_create_session_postgres(database_connections):
     assert isinstance(session, Session)
     assert session.bind.driver == 'psycopg2'
     assert session.bind.name == 'postgresql'
+
+
+def test_create_connection_mysql(database_connections):
+    session = database_connections('app01_dev')
+    assert isinstance(session, Session)
+    assert session.bind.driver == 'pymysql'
+    assert session.bind.name == 'mysql'
+
+
+def test_create_connection_postgres(database_connections):
+    session = database_connections('app02')
+    assert isinstance(session, Session)
+    assert session.bind.driver == 'psycopg2'
+    assert session.bind.name == 'postgresql'
