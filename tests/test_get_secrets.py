@@ -2,7 +2,7 @@ import pytest
 
 
 def test_get_secret(secrets):
-    assert not secrets.storage
+    # assert not secrets.storage
     assert secrets('app01_dev', 'db_user') == 'user_app01_dev'
     assert 'app01_dev' in secrets.storage
     assert 'db_user' in secrets.storage['app01_dev']
