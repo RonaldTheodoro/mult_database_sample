@@ -28,3 +28,45 @@ def test_get_session_for_app01_prod(controllers):
     database = 'app01_prod'
     session = controllers.get_session(database)
     assert session.bind.url.database == database
+
+
+def test_get_controller_with_session_for_app01_dev(controllers):
+    app = 'app01'
+    stage = 'dev'
+    database = f'{app}_{stage}'
+    controller = controllers(app, stage=stage)
+    assert isinstance(controller, App01Controller)
+    assert controller.session.bind.url.database == database
+    assert controller.database == database
+    assert controller.stage == stage
+
+
+def test_get_controller_with_session_for_app01_homolog(controllers):
+    app = 'app01'
+    stage = 'homolog'
+    database = f'{app}_{stage}'
+    controller = controllers(app, stage=stage)
+    assert isinstance(controller, App01Controller)
+    assert controller.session.bind.url.database == database
+    assert controller.database == database
+    assert controller.stage == stage
+
+
+def test_get_controller_with_session_for_app01_prod(controllers):
+    app = 'app01'
+    stage = 'prod'
+    database = f'{app}_{stage}'
+    controller = controllers(app, stage=stage)
+    assert isinstance(controller, App01Controller)
+    assert controller.session.bind.url.database == database
+    assert controller.database == database
+    assert controller.stage == stage
+
+
+def test_get_controller_with_session_for_app02(controllers):
+    app = 'app02'
+    controller = controllers(app)
+    assert isinstance(controller, App02Controller)
+    assert controller.session.bind.url.database == app
+    assert controller.database == app
+    assert controller.stage is None
