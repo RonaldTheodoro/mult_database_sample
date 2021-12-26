@@ -8,13 +8,16 @@ class Controllers:
         'app02': App02Controller,
     }
 
-    def get_session(self, app, stage=None):
+    def __call__(self, app, stage=None):
         database = app if stage is None else f'{app}_{stage}'
-        session = connections(database)
-
+        session = self.get_session(database)
         controller = self.get_controller(app)
         instance = controller(session, database, stage)
         return instance
+
+    def get_session(self, database):
+        session = connections(database)
+        return session
 
     def get_controller(self, app):
         if not self.has_controller_for_app(app):
