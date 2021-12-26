@@ -16,8 +16,7 @@ class Controllers:
         return instance
 
     def get_session(self, database):
-        session = connections(database)
-        return session
+        return connections(database)
 
     def get_controller(self, app):
         if not self.has_controller_for_app(app):
