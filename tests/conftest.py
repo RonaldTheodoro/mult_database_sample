@@ -1,6 +1,6 @@
 import pytest
 
-from settings.secrets.get_secrets import Secrets
+from settings.secrets import Secrets
 
 
 @pytest.fixture
