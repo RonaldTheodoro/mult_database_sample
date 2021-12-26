@@ -1,5 +1,3 @@
-from sqlalchemy.orm.session import Session
-
 from controllers.app01_controller import App01Controller
 from controllers.app02_controller import App02Controller
 
